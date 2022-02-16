@@ -1,6 +1,6 @@
 # dcf-game-infrastructure
 
-[![](https://github.com/o-o-overflow/dcf-game-infrastructure/workflows/Test/badge.svg)](https://github.com/o-o-overflow/dcf-game-infrastructure/actions)
+[![](https://github.com/o-o-overflow/dcf-game-infrastructure-public/workflows/Test/badge.svg)](https://github.com/o-o-overflow/dcf-game-infrastructure-public/actions)
 
 All the components necessary to run a game of the OOO DC CTF finals.
 
