@@ -1,0 +1,33 @@
+# Stage 0, build the app
+FROM node:latest
+
+# Copy all yarn dependencies over first so that they don't need to be continually installed
+CMD mkdir -p /root/app/frontend
+COPY ooogame/database/frontend/package.json /root/app/frontend/package.json
+COPY ooogame/database/frontend/yarn.lock /root/app/frontend/yarn.lock
+
+RUN yarn --cwd /root/app/frontend install --production
+
+# Build the interface
+COPY ooogame/database/frontend /root/app/frontend
+RUN yarn --cwd /root/app/frontend run build
+
+FROM game-infrastructure-base:latest
+
+RUN rm -f /etc/nginx/conf.d/default.conf
+
+COPY ooogame/database/deployment/nginx.conf /etc/nginx/
+COPY ooogame/database/deployment/flask-site-nginx.conf /etc/nginx/conf.d/
+COPY ooogame/database/deployment/uwsgi.ini /etc/uwsgi/
+COPY ooogame/database/deployment/supervisord.conf /etc/supervisord.conf
+
+WORKDIR /opt/ooogame
+
+COPY --from=0 /root/app/frontend/build /frontend/
+COPY ooogame/database/deployment/config.py /opt/ooogame/ooogame/database/config.py
+RUN . /opt/ooogame/venv/bin/activate && pip3 install /opt/ooogame rq-dashboard 'click<8'
+# XXX: click<8 due to https://github.com/Parallels/rq-dashboard/pull/383
+
+RUN . /opt/ooogame/venv/bin/activate && pip check
+
+CMD ["/usr/bin/supervisord"]

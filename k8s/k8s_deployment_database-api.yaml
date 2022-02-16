@@ -1,0 +1,27 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: database-api
+spec:
+  selector:
+    matchLabels:
+      app: database-api
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: database-api
+    spec:
+      automountServiceAccountToken: false
+      containers:
+        - name: database-api
+          image: registry.31337.ooo:5000/database-api
+          imagePullPolicy: Always
+          env:
+            - name: FLASK_WSGI_DEBUG
+              value: "True"
+
+          ports:
+            - containerPort: 80
+            

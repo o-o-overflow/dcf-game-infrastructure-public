@@ -1,0 +1,32 @@
+{
+  "name": "frontend",
+  "version": "0.2.0",
+  "private": true,
+  "proxy": "http://localhost:5001",
+  "dependencies": {
+    "dateformat": "^3.0.3",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-scripts": "1.1.4",
+    "react-avatar": "^3.6.0",
+    "showdown": "^1.8.6"
+  },
+  "devDependencies": {
+    "husky": "^3.0.1",
+    "lint-staged": "^9.2.1",
+    "prettier": "^1.18.2"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
+  },
+  "scripts": {
+    "precommit": "lint-staged",
+    "start": "PORT=3001 react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

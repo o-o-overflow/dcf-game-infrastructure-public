@@ -1,0 +1,30 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: team-interface
+spec:
+  selector:
+    matchLabels:
+      app: team-interface
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: team-interface
+    spec:
+      automountServiceAccountToken: false
+      containers:
+        - name: team-interface
+          image: registry.31337.ooo:5000/team-interface
+          imagePullPolicy: Always
+          env:
+            - name: DATABASE_API
+              value: http://database-api/
+            - name: FLASK_WSGI_DEBUG
+              value: "True"
+          ports:
+            - containerPort: 80
+              
+
+            

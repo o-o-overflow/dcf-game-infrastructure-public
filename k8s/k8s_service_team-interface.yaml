@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: team-interface
+  namespace: default
+spec:
+  selector:
+    app: team-interface
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+    nodePort: 31337
+  type: NodePort

@@ -1,0 +1,13 @@
+/* Not sure where this is used, leaving it in for now */
+.button {
+  background-color: #8292ca;
+  border: none;
+  color: white;
+  padding: 12px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 8px 8px 8px 25px;
+  cursor: pointer;
+}

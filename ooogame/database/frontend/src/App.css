@@ -1,0 +1,323 @@
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
+}
+
+.App-header {
+    background-color: #222;
+    height: 150px;
+    padding: 20px;
+    color: white;
+}
+
+.App-title {
+    font-size: 1.5em;
+}
+
+.App-intro {
+    font-size: large;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.row_header {
+    font-weight: bold;
+}
+
+.white_col {
+
+}
+
+.grey_col {
+    background: #CCCCCC;
+}
+
+table {
+    border: 1px solid;
+    padding: 0;
+    margin: 0;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 5px;
+
+}
+
+.team_list {
+    display: inline-block;
+    width: 800px;
+}
+
+.team_info_item {
+    display: inline-block;
+    width: 200px;
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.in-block {
+    display: inline-block;
+
+}
+
+.block {
+    display: block;
+
+}
+
+.pr-1 {
+    padding-right: 1rem;
+
+}
+
+.pl-1-5 {
+    padding-left: 1.5rem;
+}
+
+.container {
+    width: 95%;
+
+    margin: .5rem
+
+}
+
+.pad-1 {
+    padding: 1rem;
+
+}
+.ml-1 {
+    margin-left: 1rem;
+}
+.m-1 {
+    margin: 1rem;
+}
+
+.w100 {
+    width: 100%;
+}
+.w90 {
+    width: 100%;
+}
+
+.open_title_block {
+    display: block;
+    width: 95%;
+    background: #d6d8da;
+    margin-left: .5rem;
+    margin-right: .5rem;
+    margin-top: .5rem;
+    padding: .5rem;
+    border: 1px solid darkslategray;
+}
+.closed_title_block {
+    display: block;
+    width: 95%;
+    margin-left: .5rem;
+    margin-right: .5rem;
+    margin-top: .5rem;
+    padding: .5rem;
+
+}
+.container:nth-child(even) .closed_title_block{
+    background: #fff
+}
+.container:nth-child(odd) .closed_title_block{
+    background: #d6d8da
+}
+.message_block {
+    display: inline-block;
+    width: 95%;
+    background: #ffffff;
+    margin-left: .5rem;
+    margin-right: .5rem;
+    margin-bottom: 0;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    padding-top: .5rem;
+    border-left: 1px solid darkslategray;
+    border-right: 1px solid darkslategray;
+    border-bottom: 1px solid darkslategray;
+}
+
+.message_response {
+    width: 97%;
+    background: #ffffff;
+    margin: 0 .5rem .5rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    padding-bottom: .5rem;
+
+}
+
+button  {
+    padding: .2rem;
+    border-radius: 5px;
+}
+button:hover  {
+    background: #3b5d8133;
+    border-color: #007bff;
+}
+button:hover:not([disabled])  {
+    background: #3b5d8133;
+    border-color: #007bff;
+}
+
+button[disabled] {
+    background: #505050;
+
+}
+button:focus[disabled] {
+    outline: none;
+    -moz-outline-style: none;
+}
+button.plus {
+    background: transparent;
+    border: 0px;
+    box-shadow: transparent;
+    font-size: 150%;
+    font-weight: bold;
+}
+button.plus:hover {
+    cursor: pointer;
+}
+/*.status_buttn:hover {*/
+/*    border: 1px solid blueviolet;*/
+/*    cursor: grab;*/
+/*}*/
+.response_input {
+    width: 99%;
+    border-radius: 5px;
+    height: 3rem;
+}
+.post_response {
+    height: 3rem;
+    margin-bottom: .3rem;
+    padding-right: .5rem;
+    padding-left: .5rem;
+}
+.replier{
+    font-weight: bold;
+    font-size: 125%;
+    margin-right: .2rem;
+}
+.reply_time{
+    color: #a0a0a0;
+    font-size: 80%;
+}
+.reply_text{
+    margin-top: .5rem;
+    font-size: 90%;
+}
+.subject {
+    font-size: 150%;
+    font-weight: bold;
+    padding: .2rem;
+    height: 30px;
+}
+.status {
+    /*border: 1px solid gray;*/
+    /*border-radius: 5px;*/
+    margin-left: 1rem;
+    margin-bottom: .5rem;
+    /*padding: .2rem;*/
+}
+
+.tdate {
+    border: 0px solid gray;
+    margin-left: 1rem;
+    margin-bottom: .5rem;
+}
+
+.flex {
+  display: flex;
+  align-items: flex-end;
+}
+
+.flex .item:first-child {
+  align-self: center;
+}
+.flex .item:last-child {
+    align-self: center;
+    margin-left: auto;
+}
+.grid {
+  display: grid;
+  align-items: center;
+  justify-items: end;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid .item:first-child {
+  grid-column: 1 / 3;
+  align-self: start;
+  justify-self: center;
+}
+
+
+.top {
+    position: relative;
+    top: 0;
+}
+
+table {
+    border: 0px;
+    margin-bottom: 1rem;
+}
+
+tr {
+    padding: 0px;
+    border: 0px;
+}
+
+td {
+    padding: 0px;
+    border: 0px;
+}
+
+.avatar {
+    display: inline-block;
+    margin-right: 1em;
+
+}
+.header_team_name{
+    text-align: right;
+    position: relative;
+    right: 0;
+}
+.message_text {
+    display: block;
+    margin-bottom: auto;
+}
+
+.message_author {
+    display: block;
+    width: 100%;
+    height: 20px;
+    position: relative;
+    top: 0px;
+}
+
+.message_text_container {
+    display: inline-block;
+    min-height: 50px;
+    height: 100%;
+}
+
+.no-display{
+    display: none;
+}

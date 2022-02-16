@@ -1,0 +1,9 @@
+FROM game-infrastructure-base:latest
+
+# Will happen only if env var UPLOAD_SCOREBOARD=1
+COPY scoreboard_upload__put_in_home_to_activate.ppk /opt/ooogame/scoreboard_upload.ppk
+
+CMD ["/opt/ooogame/venv/bin/python3", "-u", "-m", "ooogame.gamestatebot.gamestatebot", "--game-state-dir", "/nfs/game_state", "--create-game-state-dir"]
+
+
+

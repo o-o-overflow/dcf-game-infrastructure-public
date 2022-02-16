@@ -1,0 +1,28 @@
+# Stage 0, build the app
+FROM node:latest
+
+# Copy all yarn dependencies over first so that they don't need to be continually installed
+CMD mkdir -p /root/app/frontend
+COPY ooogame/team_interface/frontend/package.json /root/app/frontend/package.json
+COPY ooogame/team_interface/frontend/yarn.lock /root/app/frontend/yarn.lock
+
+RUN yarn --cwd /root/app/frontend install --production
+
+# Build the interface
+COPY ooogame/team_interface/frontend /root/app/frontend
+RUN yarn --cwd /root/app/frontend run build
+
+FROM game-infrastructure-base:latest
+
+RUN mkdir /nfs && chmod 777 /nfs
+
+RUN rm -f /etc/nginx/conf.d/default.conf
+
+COPY ooogame/team_interface/deployment/nginx.conf /etc/nginx/
+COPY ooogame/team_interface/deployment/flask-site-nginx.conf /etc/nginx/conf.d/
+COPY ooogame/team_interface/deployment/uwsgi.ini /etc/uwsgi/
+COPY ooogame/team_interface/deployment/supervisord.conf /etc/supervisord.conf
+
+COPY --from=0 /root/app/frontend/build /frontend/
+
+CMD chmod 755 /nfs && /usr/bin/supervisord

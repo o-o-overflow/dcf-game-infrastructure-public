@@ -1,0 +1,3 @@
+FROM game-infrastructure-base:latest
+
+CMD /bin/sh -c "/opt/ooogame/venv/bin/python -m ooogame.patchbot.patchbot warm-patchbot && /opt/ooogame/venv/bin/rq worker --url redis://redis/"

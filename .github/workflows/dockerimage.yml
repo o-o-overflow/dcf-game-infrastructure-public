@@ -1,0 +1,45 @@
+name: Test
+
+on: [push]
+
+jobs:
+
+  pytype:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.8
+    - name: Pip install ooogame itself
+      run: pip install -e .[mysql]
+
+    - name: Pip install other deps (koh, chalmanager)
+      run: pip install ipdb click boto3
+    - name: Install pytype
+      run: pip install pytype
+
+    - name: Check python files with pytype
+      run: find ./ooogame -name '*.py' | xargs pytype --keep-going
+
+
+  nose:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.8
+    - name: Pre-pulling docker images
+      run: |
+        docker pull registry
+        docker pull ubuntu:18.04
+        docker pull httpd:alpine
+
+    - name: Pip install ooogame itself
+      run: pip install -e .[mysql]
+
+    - name: Run nose tests
+      run: python3 -m "nose" -v --logging-clear-handlers

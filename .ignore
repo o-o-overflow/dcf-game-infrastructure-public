@@ -1,0 +1,3 @@
+*.map
+/ooogame/database/frontend/build/
+yarn.lock

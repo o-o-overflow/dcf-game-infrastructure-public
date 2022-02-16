@@ -1,0 +1,388 @@
+services:
+- central_server: ooows-depot
+  check_timeout: 120
+  commit: latest
+  container_port: 3055
+  description: '<div class="d-inline-block col-md-12 service-details">Systems should
+    be free for users and programs alike, they should not be proprietary wealth-generation
+    mechanisms to pursue space fantasies.<br><br>
+
+
+    Rather than be tied to the systems of the past, the Order presents a new future.<br><br>
+
+
+    ooows will be a series of challenges that explore the next revolution in computing
+    technology.
+
+    <ul>
+
+    <li> ooows-flag-baby will be retired after 100 flags.
+
+    <li> ooows-phase-2 will be retired after 600 flags.
+
+    <li> ooows-phase-3 will be retired after 600 flags.
+
+    <li> ooows-phase-4 will be retired after 600 flags.
+
+    <li> ooows-phase-5 will be given Saturday night and will be active all day Sunday.
+
+    </ul>
+
+    If we deem it necessary for game progression, we will retire a phase earlier,
+    although we will only consider this option if a phase is unexploited for a significant
+    amount of time.
+
+    </div><div class="d-inline-block col-md-7 service-details "><a href="https://dc2021f-challs-b.s3.amazonaws.com/26f96aeb172fd172e3fe5d283158d65e4bd35f038c81ab902fdba3d561627ce2.tar.gz">Download
+    Challenge</a></div><div class="d-inline-block col-md-7 service-details">File to
+    patch: noflag.sh</div><div class="d-inline-block col-md-7 service-details">Max
+    Patchable Bytes: 2147483647</div>'
+  execution_profile: ''
+  exploit_scripts: []
+  flag_location: /root/flag-baby
+  id: 1
+  is_manual_patching: false
+  isolation: SHARED
+  limit_memory: 2G
+  local_interaction_scripts:
+  - /app/test-noflag-dev.py
+  max_bytes: 2147483647
+  name: ooows-flag-baby
+  patchable_file_from_docker: /app/devices-bin/noflag.sh
+  port: 3055
+  repo_url: git@github.com:o-o-overflow/dc2021f-ooows-flag-baby.git
+  request_memory: 2G
+  score_location: ''
+  sla_scripts:
+  - /check.sh
+  type: NORMAL
+- central_server: ''
+  check_timeout: 120
+  commit: latest
+  container_port: 9090
+  description: <div class="d-inline-block col-md-12 service-details">Can you out-shellcraft
+    your opponents? Only the worthy will hold the hill!</div><div class="d-inline-block
+    col-md-7 service-details "><a href="https://dc2021f-challs-b.s3.amazonaws.com/91afc5fdbf42663ca001a84b6f3433a8d7ac2824046d36a6ac72e62db12181c7.tar.gz">Download
+    Challenge</a></div>
+  execution_profile: ''
+  exploit_scripts: []
+  flag_location: ''
+  id: 2
+  is_manual_patching: false
+  isolation: null
+  limit_memory: 64M
+  local_interaction_scripts:
+  - /test.py
+  max_bytes: '0'
+  name: shooow-your-shell
+  patchable_file_from_docker: ''
+  port: 9090
+  repo_url: git@github.com:o-o-overflow/dc2021f-shooow-your-shell.git
+  request_memory: 64M
+  score_location: /score
+  sla_scripts: []
+  type: KING_OF_THE_HILL
+- central_server: www-depot
+  check_timeout: 120
+  commit: latest
+  container_port: 1999
+  description: <div class="d-inline-block col-md-12 service-details">Have dreamed
+    of playing in a no-holds-bared CTF inside a regular CTF?  Well your time has come.  OOO
+    brings you the inception CTF challenge of day. Can you surive the Wild Wild West?
+    Additional information available via HTTP at port 5050.</div>
+  execution_profile: ''
+  exploit_scripts: []
+  flag_location: ''
+  id: 3
+  is_manual_patching: false
+  isolation: null
+  limit_memory: 64M
+  local_interaction_scripts:
+  - /bin/true
+  max_bytes: '0'
+  name: www
+  patchable_file_from_docker: ''
+  port: 5050
+  repo_url: git@github.com:o-o-overflow/dc2021f-www.git
+  request_memory: 64M
+  score_location: /tmp/koh_scores
+  sla_scripts:
+  - /check1.py
+  type: KING_OF_THE_HILL
+- central_server: ''
+  check_timeout: 60
+  commit: latest
+  container_port: 6666
+  description: '<div class="d-inline-block col-md-12 service-details">ooopf</div><div
+    class="d-inline-block col-md-7 service-details "><a href="https://dc2021f-challs-b.s3.amazonaws.com/82e53f0f2739de243a26f7560cb1852c4a52c2384078fc4148c428737ac6b768.tar.gz">Download
+    Challenge</a></div><div class="d-inline-block col-md-7 service-details">File to
+    patch: ooopf</div><div class="d-inline-block col-md-7 service-details">Flag Location:
+    /flag</div><div class="d-inline-block col-md-7 service-details">Max Patchable
+    Bytes: 200</div>'
+  execution_profile: ''
+  exploit_scripts:
+  - /exploit.sh
+  flag_location: /flag
+  id: 6
+  is_manual_patching: false
+  isolation: PRIVATE
+  limit_memory: 128M
+  local_interaction_scripts: []
+  max_bytes: 200
+  name: ooopf
+  patchable_file_from_docker: /ooopf
+  port: 6666
+  repo_url: git@github.com:o-o-overflow/dc2021f-ooopf.git
+  request_memory: 128M
+  score_location: ''
+  sla_scripts:
+  - /check.sh
+  type: NORMAL
+- central_server: ''
+  check_timeout: 120
+  commit: latest
+  container_port: 3000
+  description: '<div class="d-inline-block col-md-12 service-details">Shall we play
+    a game? Why not! Inspired by Baba Is You, OOO''s Game Development Division is
+    proud to launch its newest interactive experience. Live the life of master hacker
+    Zero as they navigate the world of x86 and beyond! See you in the world of Zero
+    Is You!
+
+    This is a King of the Hill, where your standing is determined by the number of
+    levels you solve. Why are you still reading it? Go hack!</div><div class="d-inline-block
+    col-md-7 service-details "><a href="https://dc2021f-challs-b.s3.amazonaws.com/9aa2c34a97c54f099c71edbb787032012f88962c8d1718a419970a0f0ad63f79.tar.gz">Download
+    Challenge</a></div>'
+  execution_profile: ''
+  exploit_scripts: []
+  flag_location: ''
+  id: 8
+  is_manual_patching: false
+  isolation: null
+  limit_memory: 1024M
+  local_interaction_scripts: []
+  max_bytes: '0'
+  name: zero-is-you
+  patchable_file_from_docker: ''
+  port: 3000
+  repo_url: git@github.com:o-o-overflow/dc2021f-zero-is-you.git
+  request_memory: 1024M
+  score_location: /home/zero_is_you/score.dat
+  sla_scripts:
+  - /check1.sh
+  type: KING_OF_THE_HILL
+- central_server: ooows-depot
+  check_timeout: 120
+  commit: latest
+  container_port: 1200
+  description: '<div class="d-inline-block col-md-12 service-details">You talked,
+    we listened. We obsess over The Users. This requires ownership, backbone, and
+    deep technical expertise. To meet your needs and support your rapid, extensible
+    prototyping, the Order has leveraged its synergies and reimagined the cloud from
+    the ground up. Compute, your way, with empowering networking.
+
+
+    600 flags available in this phase of ooows.
+
+    </div><div class="d-inline-block col-md-7 service-details "><a href="https://dc2021f-challs-b.s3.amazonaws.com/3163fe3a983b4093d6ea26f70f6443fb7020a80738e2c01d9880789a532c9cd2.tar.gz">Download
+    Challenge</a></div><div class="d-inline-block col-md-7 service-details">File to
+    patch: net-firmware</div><div class="d-inline-block col-md-7 service-details">Max
+    Patchable Bytes: 1295</div>'
+  execution_profile: ''
+  exploit_scripts: []
+  flag_location: /root/broadcooom
+  id: 10
+  is_manual_patching: false
+  isolation: SHARED
+  limit_memory: 2G
+  local_interaction_scripts:
+  - /app/test-net-dev.py
+  max_bytes: 1295
+  name: ooows-broadcooom
+  patchable_file_from_docker: /app/devices-bin/net-firmware
+  port: 1200
+  repo_url: git@github.com:o-o-overflow/dc2021f-ooows-broadcooom.git
+  request_memory: 2G
+  score_location: ''
+  sla_scripts:
+  - /check.sh
+  type: NORMAL
+- central_server: ooows-depot
+  check_timeout: 120
+  commit: latest
+  container_port: 9999
+  description: '<div class="d-inline-block col-md-12 service-details">Kicking off
+    a revolution in cloud computing is a good start, but the Order continues to Fight
+    For The User. And the users have spoken! Network-based file storage is critical
+    to the maintenance of mission-critical synergies and development of core competencies.
+    Thus, to further the Cloud Computng Revolution, the Order is proud to unveil a
+    new file sharing technology allowing your VM to share its creations with the world.
+
+
+    This is ooows-phase-2. It will last for 600 flags.
+
+    </div><div class="d-inline-block col-md-7 service-details "><a href="https://dc2021f-challs-b.s3.amazonaws.com/4cb12ee27b5ef2e8854c970db7d81d3a9bf00602ac20233745ed58a287ea4631.tar.gz">Download
+    Challenge</a></div><div class="d-inline-block col-md-7 service-details">File to
+    patch: p9fs</div><div class="d-inline-block col-md-7 service-details">Max Patchable
+    Bytes: 300</div>'
+  execution_profile: ''
+  exploit_scripts: []
+  flag_location: /root/p92021
+  id: 9
+  is_manual_patching: false
+  isolation: SHARED
+  limit_memory: 2G
+  local_interaction_scripts:
+  - /app/test-p9-dev.py
+  max_bytes: 300
+  name: ooows-p92021
+  patchable_file_from_docker: /app/devices-bin/p9fs
+  port: 9999
+  repo_url: git@github.com:o-o-overflow/dc2021f-ooows-p92021.git
+  request_memory: 2G
+  score_location: ''
+  sla_scripts:
+  - /check.sh
+  type: NORMAL
+- central_server: ooows-depot
+  check_timeout: 120
+  commit: latest
+  container_port: 8664
+  description: '<div class="d-inline-block col-md-12 service-details">Too long have
+    the Users struggled with KVM, requiring ROI-dampening access to source code. To
+    maximize organizational impact and promote our Junior Engineers to Senior Engineers
+    and beyond, we have circled back to the hypervisor. Let''s take things back to
+    basics with a detail-oriented, technical deep dive into operational disruptors.
+    Hyper-o is our most advanced hypervisor ever. We''ve obsessed over every painstaking
+    detail, and we think our customers will love it. Only OOO is able to provide this
+    industry-redefining product.
+
+    Join us, to Be What''s Next.
+
+    This phase will remain active until the end of the CTF!</div><div class="d-inline-block
+    col-md-7 service-details "><a href="https://dc2021f-challs-b.s3.amazonaws.com/388cdb406c90453e15e593e7ece1e86ebab4fcc25dd7ca2cc5c35392e6da101c.tar.gz">Download
+    Challenge</a></div><div class="d-inline-block col-md-7 service-details">File to
+    patch: hyper-o.ko</div><div class="d-inline-block col-md-7 service-details">Max
+    Patchable Bytes: 628768</div>'
+  execution_profile: ''
+  exploit_scripts: []
+  flag_location: /root/hyper-o
+  id: 11
+  is_manual_patching: false
+  isolation: SHARED
+  limit_memory: 2048M
+  local_interaction_scripts:
+  - /run-tests-outer.sh
+  max_bytes: 628768
+  name: ooows-hyper-o
+  patchable_file_from_docker: /hyper-o.ko
+  port: 8664
+  repo_url: git@github.com:o-o-overflow/dc2021f-ooows-hyper-o.git
+  request_memory: 1024M
+  score_location: ''
+  sla_scripts:
+  - /check.sh
+  type: NORMAL
+- central_server: ''
+  check_timeout: 30
+  commit: latest
+  container_port: 7829
+  description: '<div class="d-inline-block col-md-12 service-details">OOO''s new IOT
+    platform: Ruby on Rails? No. Ruby on Bare Metal x86. Building native extensions.
+    This could take a while...
+
+    this challenge has no flag limit and can be retired at our discretion</div><div
+    class="d-inline-block col-md-7 service-details "><a href="https://dc2021f-challs-b.s3.amazonaws.com/125d6d8894e45cfefcc5e441351c76e54256cc7d5841fbbe0aad702a9b766fdc.tar.gz">Download
+    Challenge</a></div><div class="d-inline-block col-md-7 service-details">File to
+    patch: payload.bin</div><div class="d-inline-block col-md-7 service-details">Flag
+    Location: /flag</div><div class="d-inline-block col-md-7 service-details">Max
+    Patchable Bytes: 5000</div>'
+  execution_profile: ''
+  exploit_scripts:
+  - /exploit1.py
+  - /exploit2.py
+  flag_location: /flag
+  id: 12
+  is_manual_patching: false
+  isolation: PRIVATE
+  limit_memory: 1024M
+  local_interaction_scripts:
+  - /check_filetype.sh
+  - /no-flag-patch.sh
+  max_bytes: 5000
+  name: barb-metal
+  patchable_file_from_docker: /payload.bin
+  port: 7829
+  repo_url: git@github.com:o-o-overflow/dc2021f-barb-metal.git
+  request_memory: 1024M
+  score_location: ''
+  sla_scripts:
+  - /check1.py
+  type: NORMAL
+- central_server: ''
+  check_timeout: 50
+  commit: latest
+  container_port: 3333
+  description: '<div class="d-inline-block col-md-12 service-details">While the summer
+    Olympic is happening, let''s get ready and have fun for winter Olympic.</div><div
+    class="d-inline-block col-md-7 service-details "><a href="https://dc2021f-challs-b.s3.amazonaws.com/8b640db85af2a3ea05c55f2bf3a2d2a6a4d680d27bb076b514fa543a3effcd9b.tar.gz">Download
+    Challenge</a></div><div class="d-inline-block col-md-7 service-details">File to
+    patch: defender.py</div><div class="d-inline-block col-md-7 service-details">Flag
+    Location: /flag</div><div class="d-inline-block col-md-7 service-details">Max
+    Patchable Bytes: 10000</div>'
+  execution_profile: ''
+  exploit_scripts:
+  - /exploit1.py
+  flag_location: /flag
+  id: 13
+  is_manual_patching: false
+  isolation: PRIVATE
+  limit_memory: 64M
+  local_interaction_scripts:
+  - /check_filetype.sh
+  max_bytes: 10000
+  name: cooorling
+  patchable_file_from_docker: /defender.py
+  port: 3333
+  repo_url: git@github.com:o-o-overflow/dc2021f-cooorling.git
+  request_memory: 64M
+  score_location: ''
+  sla_scripts:
+  - /check1.py
+  type: NORMAL
+- central_server: ooows-depot
+  check_timeout: 120
+  commit: latest
+  container_port: 8086
+  description: '<div class="d-inline-block col-md-12 service-details">The Users are
+    computing! But Computational Democracy requires strength, and strength requires
+    security. The Order will protect the security of its computation warriors against
+    bezy little bees that would propogate ambiguity and erode proprietary advantage.
+
+
+    Presenting ooows phase 3, now with secure computation!
+
+
+    600 flags availble in this phase of ooows.
+
+    </div><div class="d-inline-block col-md-7 service-details "><a href="https://dc2021f-challs-b.s3.amazonaws.com/a147c0dba961fc3a98edfb4aea10ba405528f223d4e4d4ee4623451b35be420c.tar.gz">Download
+    Challenge</a></div><div class="d-inline-block col-md-7 service-details">File to
+    patch: ogx_enclave_flag.bin</div><div class="d-inline-block col-md-7 service-details">Max
+    Patchable Bytes: 1</div>'
+  execution_profile: ''
+  exploit_scripts: []
+  flag_location: /root/ogx
+  id: 14
+  is_manual_patching: false
+  isolation: SHARED
+  limit_memory: 2G
+  local_interaction_scripts:
+  - /app/test-ogx-dev.py
+  max_bytes: 1
+  name: ooows-ogx
+  patchable_file_from_docker: /app/devices-bin/ogx_enclave_flag.bin
+  port: 8086
+  repo_url: git@github.com:o-o-overflow/dc2021f-ooows-ogx.git
+  request_memory: 2G
+  score_location: ''
+  sla_scripts:
+  - /check.sh
+  type: NORMAL

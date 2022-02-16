@@ -1,0 +1,6 @@
+FROM game-infrastructure-base:latest
+
+CMD ["/opt/ooogame/venv/bin/python3", "-u", "-m", "ooogame.gamebot.gamebot"]
+
+
+

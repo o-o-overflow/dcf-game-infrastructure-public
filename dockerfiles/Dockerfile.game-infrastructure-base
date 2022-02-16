@@ -1,0 +1,19 @@
+FROM alpine
+RUN apk update && apk add --no-cache musl-dev mariadb-dev g++ make python3 python3-dev bash nginx uwsgi-python3 supervisor docker curl putty && \
+  	python3 -m ensurepip && \
+	pip3 install --upgrade pip setuptools && \
+	rm -r /root/.cache
+
+
+# XXX: also see setup.py
+
+RUN python3 -m venv /opt/ooogame/venv
+RUN . /opt/ooogame/venv/bin/activate && pip3 install -U pip setuptools wheel
+RUN . /opt/ooogame/venv/bin/activate && pip3 install requests flask flask-restful nose python-dateutil sqlalchemy Flask-SQLAlchemy Flask-Migrate pyyaml coverage dpkt pyfakefs docker redis fakeredis Flask-RQ2 kubernetes coloredlogs mysqlclient
+
+ADD ./ooogame /opt/ooogame/ooogame
+COPY setup.py /opt/ooogame/setup.py
+
+RUN . /opt/ooogame/venv/bin/activate && pip3 install /opt/ooogame[mysql]
+
+WORKDIR /opt/ooogame

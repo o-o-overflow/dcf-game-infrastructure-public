@@ -1,0 +1,13 @@
+/.idea/
+/bin/
+/lib/
+/lib64
+/man/
+/out/
+/game_store.iml
+/pip-selfcheck.json
+/pyvenv.cfg
+/share/
+/tags
+__pycache__/
+admin.conf

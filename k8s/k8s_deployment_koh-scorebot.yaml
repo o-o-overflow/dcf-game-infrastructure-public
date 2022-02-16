@@ -1,0 +1,33 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: koh-scorebot
+spec:
+  selector:
+    matchLabels:
+      app: koh-scorebot
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: koh-scorebot
+    spec:
+      automountServiceAccountToken: false
+      containers:
+        - name: koh-scorebot
+          image: registry.31337.ooo:5000/koh-scorebot
+          imagePullPolicy: Always
+          env:
+            - name: KUBECONFIG
+              value: /etc/config/game.k8s.config
+            - name: DATABASE_API
+              value: http://database-api/
+          volumeMounts:
+          - name: config-volume
+            mountPath: /etc/config
+      volumes:
+        - name: config-volume
+          configMap:
+            name: game-config
+            

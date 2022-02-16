@@ -1,0 +1,11 @@
+.git
+**/*.egg-info
+**/*.pyc
+**/__pycache__
+test
+
+**/cloned_repos
+
+ooogame/database/frontend/build
+ooogame/team_interface/frontend/build
+**/node_modules
